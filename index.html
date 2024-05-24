@@ -103,8 +103,8 @@
   <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">Methodology</p>
   <p style="font-size: 1.2em" class="serif">
     Motion-based controllable text-to-video generation involves motions to control the video generation. Previous methods typically require the training of models to
-    encode motion cues or the fine-tuning of video diffusion models. However, these approaches often result in suboptimal motion generation when applied outside the trained domain.
-    In this work, we propose MotionClone, a training-free framework that enables motion cloning from a reference video to control text-to-video gener7 ation.<br><br>
+    encode motion cues (e.g., VideoComposer) or the fine-tuning of video diffusion models (e.g., Tune-A-Video and VMC). However, these approaches often result in suboptimal motion generation when applied outside the trained domain.
+    In this work, we propose MotionClone, a training-free framework that enables motion cloning from a reference video to control text-to-video generation.<br><br>
 
     At the core of the proposed framework is to append a newly-initialized motion modeling module to the frozen based text-to-image model, and train it on video clips thereafter to distill a reasonable motion prior. Once trained, by simply injecting this motion modeling module, all personalized versions derived from the same base one readily become text-driven models that produce diverse and personalized animated images.
   </p>
