@@ -106,7 +106,9 @@
     encode motion cues (e.g., VideoComposer) or the fine-tuning of video diffusion models (e.g., Tune-A-Video and VMC). However, these approaches often result in suboptimal motion generation when applied outside the trained domain.
     In this work, we propose MotionClone, a training-free framework that enables motion cloning from a reference video to control text-to-video generation.<br><br>
 
-    At the core of the proposed framework is to append a newly-initialized motion modeling module to the frozen based text-to-image model, and train it on video clips thereafter to distill a reasonable motion prior. Once trained, by simply injecting this motion modeling module, all personalized versions derived from the same base one readily become text-driven models that produce diverse and personalized animated images.
+    As illustrated in the framework diagram below, MotionClone comprises two core components: Primary
+    Temporal-Attention Guidance and Location-Aware Semantic Guidance, which operate synergistically
+    to provide comprehensive motion and semantic guidance.
   </p>
   <img class="summary-img" src="figs/framework.jpg" style="width:100%;"> <br>
 </div>
