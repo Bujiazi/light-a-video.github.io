@@ -55,9 +55,38 @@
     <p class="serif" style="color: red; font-weight: bold">Click to Play the Animations!</p>
   </font>
 
-  <video class="clickplay" width="100%">
+  <!-- <video class="clickplay" width="100%">
     <source src="animations/teaser/teaser.mp4" type="video/mp4">
-  </video>
+  </video> -->
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Play and Loop Video</title>
+    <style>
+        .clickplay {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <video id="teaser" class="clickplay" width="100%">
+        <source src="animations/teaser/teaser.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        document.getElementById('teaser').addEventListener('click', function() {
+            var video = this;
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+            video.loop = true;  // Enable loop
+        });
+    </script>
+</body>
   <!-- <div class="row">
     <div class="col">
       <video class="clickplay" width="100%">
@@ -128,9 +157,37 @@
     <!-- We recommend users visit our github repo and play with our pre-trained weights. -->
   </p>
 
-  <video class="clickplay" width="100%">
+  <!-- <video class="clickplay" width="100%">
     <source src="animations/model_01/gallery_1.mp4" type="video/mp4">
-  </video>
+  </video> -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Play and Loop Video</title>
+    <style>
+        .clickplay {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <video id="gallery_1" class="clickplay" width="100%">
+        <source src="animations/model_01/gallery_1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        document.getElementById('gallery_1').addEventListener('click', function() {
+            var video = this;
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+            video.loop = true;  // Enable loop
+        });
+    </script>
+</body>
 
   <!-- <div class="row">
     <div class="col-gallery">
@@ -183,9 +240,38 @@
   </div> -->
   <p class="serif" style="font-size: 1.2em; text-align: left; margin: 5px; margin-bottom: 20px"> </a></p>
 
-  <video class="clickplay" width="100%">
+  <!-- <video class="clickplay" width="100%">
     <source src="animations/model_03/gallery_2.mp4" type="video/mp4">
-  </video>
+  </video> -->
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Play and Loop Video</title>
+    <style>
+        .clickplay {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <video id="gallery_2" class="clickplay" width="100%">
+        <source src="animations/model_03/gallery_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        document.getElementById('gallery_2').addEventListener('click', function() {
+            var video = this;
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+            video.loop = true;  // Enable loop
+        });
+    </script>
+</body>
 
   <!-- <div class="row">
     <div class="row">
@@ -238,9 +324,37 @@
   </div> -->
   <p class="serif" style="font-size: 1.2em; text-align: left; margin: 5px; margin-bottom: 20px"> </a></p>
 
-  <video class="clickplay" width="100%">
+  <!-- <video class="clickplay" width="100%">
     <source src="animations/model_05/gallery_3.mp4" type="video/mp4">
-  </video>
+  </video> -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Play and Loop Video</title>
+    <style>
+        .clickplay {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <video id="gallery_3" class="clickplay" width="100%">
+        <source src="animations/model_05/gallery_3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        document.getElementById('gallery_3').addEventListener('click', function() {
+            var video = this;
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+            video.loop = true;  // Enable loop
+        });
+    </script>
+</body>
   <!-- <div class="row">
     <div class="row">
       <div class="col-gallery">
