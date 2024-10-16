@@ -136,10 +136,10 @@
   <p style="font-size: 1.2em" class="serif">
     Motion-based controllable text-to-video generation involves motions to control the video generation. Previous methods typically require the training of models to
     encode motion cues (e.g., VideoComposer) or the fine-tuning of video diffusion models (e.g., Tune-A-Video and VMC). However, these approaches often result in suboptimal motion generation when applied outside the trained domain.
-    In this work, we propose MotionClone, a training-free framework that enables motion cloning from a reference video to control text-to-video generation. 
-    We employ temporal attention in video inversion to represent the motions in the reference video and introduce primary temporal-attention guidance to mitigate the influence of noisy or very subtle motions within the attention weights. 
-    Furthermore, to assist the generation model in synthesizing reasonable spatial relationships and enhance its prompt-following capability, we propose a location-aware semantic guidance mechanism that leverages the coarse location of the 
-    foreground from the reference video and original classifier-free guidance features to guide the video generation.<br><br>
+    In this work, we propose MotionClone, a training-free framework that enables motion cloning from reference videos to versatile motion-controlled video generation, including text-to-video and image-to-video. Based on the observation 
+    that the dominant components in temporal-attention maps drive motion synthesis, while the rest mainly capture noisy or very subtle motions, MotionClone utilizes sparse temporal attention weights as motion representations for motion guidance, 
+    facilitating diverse motion transfer across varying scenarios. Meanwhile, MotionClone allows for the direct extraction of motion representation through a single denoising step, bypassing the cumbersome inversion processes and thus promoting 
+    both efficiency and flexibility. Extensive experiments demonstrate that MotionClone exhibits proficiency in both global camera motion and local object motion, with notable superiority in terms of motion fidelity, textual alignment, and temporal consistency.<br><br>
 
     As illustrated in the framework below, MotionClone comprises two core components in its guidance stage: Primary
     Temporal-Attention Guidance and Location-Aware Semantic Guidance, which operate synergistically
