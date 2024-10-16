@@ -526,6 +526,7 @@
     </script>
 </body> -->
 
+</div>
 
 <div class="content">
   <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">Camera Motion Cloning Gallery</p>
@@ -534,63 +535,38 @@
     <span style="color: red; font-weight: bold">Click to play the following animations.</span>
   </p>
 
-  <div class="row">
-    <div class="row">
-      <div class="col-gallery">
-        <video class="clickplay" width="100%">
-          <source src="animations/same_prompt_01/01.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="col-gallery">
-        <video class="clickplay" width="100%">
-          <source src="animations/same_prompt_01/02.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="col-gallery">
-        <video class="clickplay" width="100%">
-          <source src="animations/same_prompt_01/03.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="col-gallery">
-        <video class="clickplay" width="100%">
-          <source src="animations/same_prompt_01/04.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </div>
-  <p class="serif" style="font-size: 1.2em; text-align: left; margin: 5px; margin-bottom: 20px">Model: <a href="https://civitai.com/models/30240/toonyou">ToonYou</a></p>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Play and Loop Video</title>
+    <style>
+        .clickplay {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <video id="gallery_1" class="clickplay" width="100%">
+        <source src="animations/model_01/obj_1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-  <div class="row">
-    <div class="row">
-      <div class="col-gallery">
-        <video class="clickplay" width="100%">
-          <source src="animations/same_prompt_02/01.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="col-gallery">
-        <video class="clickplay" width="100%">
-          <source src="animations/same_prompt_02/02.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="col-gallery">
-        <video class="clickplay" width="100%">
-          <source src="animations/same_prompt_02/03.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="col-gallery">
-        <video class="clickplay" width="100%">
-          <source src="animations/same_prompt_02/04.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </div>
-  <p class="serif" style="font-size: 1.2em; text-align: left; margin: 5px; margin-bottom: 20px">Model: <a href="https://civitai.com/models/4468/counterfeit-v30">Counterfeit V3.0</a>
-  </p>
+    <script>
+        document.getElementById('gallery_1').addEventListener('click', function() {
+            var video = this;
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+            video.loop = true;  // Enable loop
+        });
+    </script>
+</body>
 
 </div>
 
 
-</div>
 
 <div class="content" id="bibtex">
   <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">BibTeX</p>
