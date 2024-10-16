@@ -141,9 +141,10 @@
     facilitating diverse motion transfer across varying scenarios. Meanwhile, MotionClone allows for the direct extraction of motion representation through a single denoising step, bypassing the cumbersome inversion processes and thus promoting 
     both efficiency and flexibility. Extensive experiments demonstrate that MotionClone exhibits proficiency in both global camera motion and local object motion, with notable superiority in terms of motion fidelity, textual alignment, and temporal consistency.<br><br>
 
-    As illustrated in the framework below, MotionClone comprises two core components in its guidance stage: Primary
-    Temporal-Attention Guidance and Location-Aware Semantic Guidance, which operate synergistically
-    to provide comprehensive motion and semantic guidance for controllable video generation.
+    As illustrated in the framework below, given a real reference video, the corresponding motion representation is obtained by performing a single noise-adding and denoising step.
+    During the video generation process, an initial latent is initialized from a standard Gaussian distribution and subsequently undergoes an iterative denoising procedure via a pre-trained video diffusion
+    model, advised by both classifier-free guidance and the proposed motion guidance. Given that image structure is determined in the early steps of the denoising process, whereas
+    motion fidelity primarily depends on the structure of each frame, motion guidance only involves the early denoising steps, allowing for sufficient flexibility for semantic adjustment and thus empowering premium video generation with compelling motion fidelity and precise textual alignment.
   </p>
   <img class="summary-img" src="figs/framework.jpg" style="width:100%;"> <br>
 </div>
