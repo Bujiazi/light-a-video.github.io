@@ -663,6 +663,34 @@
         });
     </script>
 </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click to Play and Loop Video</title>
+  <style>
+      .clickplay {
+          cursor: pointer;
+      }
+  </style>
+</head>
+<body>
+  <video id="app_2" class="clickplay" width="100%">
+      <source src="animations/application/page_s2v.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+
+  <script>
+      document.getElementById('app_2').addEventListener('click', function() {
+          var video = this;
+          if (video.paused) {
+              video.play();
+          } else {
+              video.pause();
+          }
+          video.loop = true;  // Enable loop
+      });
+  </script>
+</body>
 
 </div>
 
