@@ -144,12 +144,31 @@
 <div class="content">
   <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">Methodology</p>
   <p style="font-size: 1.2em" class="serif">
-    Motion-based controllable text-to-video generation involves motions to control the video generation. Previous methods typically require the training of models to
-    encode motion cues (e.g., VideoComposer) or the fine-tuning of video diffusion models (e.g., Tune-A-Video and VMC). However, these approaches often result in suboptimal motion generation when applied outside the trained domain.
-    In this work, we propose MotionClone, a training-free framework that enables motion cloning from reference videos to versatile motion-controlled video generation, including text-to-video and image-to-video. Based on the observation 
-    that the dominant components in temporal-attention maps drive motion synthesis, while the rest mainly capture noisy or very subtle motions, MotionClone utilizes sparse temporal attention weights as motion representations for motion guidance, 
-    facilitating diverse motion transfer across varying scenarios. Meanwhile, MotionClone allows for the direct extraction of motion representation through a single denoising step, bypassing the cumbersome inversion processes and thus promoting 
-    both efficiency and flexibility. Extensive experiments demonstrate that MotionClone exhibits proficiency in both global camera motion and local object motion, with notable superiority in terms of motion fidelity, textual alignment, and temporal consistency.<br><br>
+    Recent advancements in image relighting models, 
+    driven by large-scale datasets and pre-trained diffusion models, 
+    have enabled the imposition of consistent lighting. 
+    However, video relighting still lags behind, 
+    primarily due to the excessive training costs and the
+    scarcity of diverse, high-quality video relighting datasets.
+    A simple application of image relighting models on a frame-by-frame basis leads to several issues: 
+    lighting source inconsistency and relighted appearance inconsistency,
+    resulting in flickers in the generated videos.
+    In this work, we propose Light-A-Video, 
+    a training-free approach to achieve temporally smooth video relighting.
+    Adapted from image relighting models, 
+    Light-A-Video introduces two key modules to enhance lighting consistency.
+    First, we design a Consistent Light Attention 
+    (CLA) module, 
+    which enhances cross-frame interactions within the self-attention layers 
+    to stabilize the generation of the background lighting source.
+    Second, leveraging the physical principle of light transport independence, 
+    we apply linear blending between the source video’s appearance
+    and the relighted appearance, 
+    using a Progressive Light Fusion (PLF) strategy to ensure
+    smooth temporal transitions in illumination.
+    Experiments show that Light-A-Video improves the temporal consistency of relighted video
+    while maintaining the image quality, 
+    ensuring coherent lighting transitions across frames.<br><br>
 
     As illustrated in the framework below, given a real reference video, the corresponding motion representation is obtained by performing a single noise-adding and denoising step.
     During the video generation process, an initial latent is initialized from a standard Gaussian distribution and subsequently undergoes an iterative denoising procedure via a pre-trained video diffusion
