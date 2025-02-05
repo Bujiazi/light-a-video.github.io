@@ -6,6 +6,10 @@
 <script type="text/javascript" src="./AnimateDiff_files/jquery.mlens-1.0.min.js"></script> 
 <script type="text/javascript" src="./AnimateDiff_files/jquery.js"></script>
 
+<script type="text/javascript" async 
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 
 <style>
   p.serif{
@@ -170,10 +174,14 @@
     while maintaining the image quality, 
     ensuring coherent lighting transitions across frames.<br><br>
 
-    As illustrated in the framework below, given a real reference video, the corresponding motion representation is obtained by performing a single noise-adding and denoising step.
-    During the video generation process, an initial latent is initialized from a standard Gaussian distribution and subsequently undergoes an iterative denoising procedure via a pre-trained video diffusion
-    model, advised by both classifier-free guidance and the proposed motion guidance. Given that image structure is determined in the early steps of the denoising process, whereas
-    motion fidelity primarily depends on the structure of each frame, motion guidance only involves the early denoising steps, allowing for sufficient flexibility for semantic adjustment and thus empowering premium video generation with compelling motion fidelity and precise textual alignment.
+    As illustrated in the framework below, a source video is first noised and processed through the video diffusion model for denoising across \( T_m \)
+    steps. At each step, the predicted noise-free component serves as the Consistent Target \( \mathbf{z}^{v}_{0 \gets t} \), 
+    inherently representing the denoising direction of the VDM. 
+    With Consistent Light Attention, \( \mathbf{z}^{v}_{0 \gets t} \) is infused with the unique lighting information 
+    transforming it into the Relight Target \( \mathbf{z}^{r}_{0 \gets t} \).
+    The Progressive Light Fusion strategy then merges two targets to form the Fusion Target \( \tilde{\mathbf{z}}_{0 \gets t} \), 
+    serving as the new denoising direction for the current step.
+    The bottom-right part illustrates the iterative evolution of the \( \mathbf{z}^{v}_{0 \gets t} \) during the denoising process.
   </p>
   <img class="summary-img" src="figs/framework.png" style="width:100%;"> <br>
 </div>
