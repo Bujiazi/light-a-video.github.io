@@ -174,14 +174,13 @@
     while maintaining the image quality, 
     ensuring coherent lighting transitions across frames.<br><br>
 
-    As illustrated in the framework below, a source video is first noised and processed through the video diffusion model for denoising across \( T_m \)
-    steps. At each step, the predicted noise-free component serves as the Consistent Target \( \mathbf{z}^{v}_{0 \gets t} \), 
-    inherently representing the denoising direction of the VDM. 
-    With Consistent Light Attention, \( \mathbf{z}^{v}_{0 \gets t} \) is infused with the unique lighting information 
-    transforming it into the Relight Target \( \mathbf{z}^{r}_{0 \gets t} \).
+    As illustrated in the framework below, a source video is first noised and processed through the VDM for denoising across \( T_m \) steps. 
+    At each step, the predicted noise-free component with details compensation serves as the Consistent Target \( \mathbf{z}^{v}_{0 \gets t} \), 
+    inherently representing the VDM's denoising direction.  
+    Consistent Light Attention infuses \( \mathbf{z}^{v}_{0 \gets t} \) with unique lighting information, transforming it into the Relight Target \( \mathbf{z}^{r}_{0 \gets t} \).  
     The Progressive Light Fusion strategy then merges two targets to form the Fusion Target \( \tilde{\mathbf{z}}_{0 \gets t} \), 
-    serving as the new denoising direction for the current step.
-    The bottom-right part illustrates the iterative evolution of the \( \mathbf{z}^{v}_{0 \gets t} \) during the denoising process.
+    which provides a refined direction for the current step.  
+    The bottom-right part illustrates the iterative evolution of \( \mathbf{z}^{v}_{0 \gets t} \).    
   </p>
   <img class="summary-img" src="figs/framework.png" style="width:100%;"> <br>
 </div>
